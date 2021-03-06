@@ -1,0 +1,16 @@
+{
+    "name": "allspark",
+    "version": "1.0.0",
+    "description": "page-template",
+    "main": "webpack.config.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jialinmo/allspark.git"
+    },
+    "keywords": [],
+    "author": "jialinmo",
+    "license": "ISC"
+}
