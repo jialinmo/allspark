@@ -57,14 +57,44 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          test: /\.js$/i,
+          use: "babel-loader",
         },
-
+        {
+          test: /\.css$/i,
+          use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+          ],
+        },
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  plugins: [
+                    [
+                      "postcss-preset-env",
+                      {
+                        // Options
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+        },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
         },
+
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: 'asset/resource',
