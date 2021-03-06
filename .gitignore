@@ -1,0 +1,10 @@
+.vscode
+/node_modules
+/dist
+.vscode
+
+## 临时注释 start
+src/test.js
+src/images
+src/fonts
+## 临时注释 end
