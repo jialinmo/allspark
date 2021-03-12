@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'MyFont';
-  src: url('./fonts/TencentSansW7-Regular.woff') format('woff');
+  src: url('../../fonts/TencentSansW7-Regular.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
 body{
   width: 100%;
-  background: url("./images/logo-2.png");
+  background: url("../../images/logo-2.png");
   font-family: 'MyFont';
 }
 
@@ -16,4 +16,6 @@ body{
 .block{
   display: flex;
   color:red;
+  font-size: 20px;
+  border: 3px solid #333;
 }

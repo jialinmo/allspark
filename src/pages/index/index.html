@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
+    ${ require('raw-loader!./meta.html')}
     <title>Allspark</title>
     <!--计算页面根结点font-szie大小 ， 需要凡在最前面执行 且不能打包需要内敛-->
     <script>
-      
+        ${ require('raw-loader!babel-loader!../node_modules/lib-flexible/flexible.js')}
     </script>
 </head>
 
 <body>
-    <div>werweer</div>
+    <img src="src/images/logo-1.png">
 </body>
 
 </html>

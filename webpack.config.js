@@ -1,28 +1,22 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const { entryDetector } = require('./build/common/entry-detector');
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // css 分离
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-//
+
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { constants } = require('buffer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
   console.log('NODE_ENV: ', env.NODE_ENV);
   return {
     mode: 'development',       // dev
-    entry: {
-      index: {
-        import: './src/index.js',
-        dependOn: 'shared',
-      },
-      login: {
-        import: './src/login.js',
-        dependOn: 'shared',
-      },
-      shared: 'lodash',
-    },
+    entry: entryDetector.entry,
     devtool: 'inline-source-map', // dev
     devServer: {                  // dev
       contentBase: './dist',
@@ -34,9 +28,8 @@ module.exports = (env) => {
       // 结构分析模块
       //new BundleAnalyzerPlugin(),
 
-      new HtmlWebpackPlugin({
-        title: 'Development',
-      })
+      ...entryDetector.htmlWebpackPlugins
+
     ],
     output: {
       filename: '[name].[contenthash].js',
@@ -88,6 +81,13 @@ module.exports = (env) => {
                 },
               },
             },
+            // {
+            //   loader: 'px2rem-loader',
+            //   options: {
+            //     remUnit: 75,
+            //     remPrecesion: 8
+            //   }
+            // }
           ],
         },
         {
