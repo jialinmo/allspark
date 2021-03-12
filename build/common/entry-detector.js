@@ -4,8 +4,8 @@
  * creator jialinmo 2020/03/10
  */
 const glob = require('glob');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pageTitleList = {
   'index': '主页',
   'login': '登陆页'
