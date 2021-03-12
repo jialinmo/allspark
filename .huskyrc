@@ -1,7 +1,0 @@
-{
-  "hooks":{
-    "pre-commit" : "echo 开始提交检查",
-    "commit-msg": "node build/common/commit-lint",
-    "pre-push":"echo 开始提交代码"
-  }
-}
