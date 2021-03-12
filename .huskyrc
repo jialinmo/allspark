@@ -1,7 +1,7 @@
 {
   "hooks":{
-    "per-commit" : "echo 开始提交检查",
+    "pre-commit" : "echo 开始提交检查",
     "commit-msg": "ndoe build/common/commit-limit",
-    "pre-puch":"echo 开始提交代码"
+    "pre-push":"echo 开始提交代码"
   }
 }
