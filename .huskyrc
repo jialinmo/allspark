@@ -1,7 +1,7 @@
 {
   "hooks":{
     "pre-commit" : "echo 开始提交检查",
-    "commit-msg": "ndoe build/common/commit-limit",
+    "commit-msg": "node build/common/commit-limit",
     "pre-push":"echo 开始提交代码"
   }
 }
